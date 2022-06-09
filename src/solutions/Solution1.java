@@ -9,6 +9,7 @@ public class Solution1 {
         System.out.println(solution1.solution(new int[] {1, 2, 3, 4, 5}, 5));
     }
 
+    //Binary search O(logn)
     public int solution(int[] A, int X) {
         int N = A.length;
         if(N == 0){
@@ -23,6 +24,8 @@ public class Solution1 {
             }else if(A[m] == X){
                 return m;
             }else{
+                //break the cycle
+                //will end up with an infinite loop
                 l = m + 1;
             }
         }

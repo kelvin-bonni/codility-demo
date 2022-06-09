@@ -12,6 +12,7 @@ public class Solution2 {
         System.out.println(solution2.solution(new int[] {1, 3, 6, 1, 9, 1, 5, 3, 5, 4, 2}));
     }
 
+
     public int solution(int[] A) {
         int numOfStripes = 0;
         int maxElementInA = Arrays.stream(A).max().getAsInt();
@@ -19,10 +20,14 @@ public class Solution2 {
         for(int i = 0; i < maxElementInA; i++){
             boolean breakStripe = true;
             for(int j = 0; j < A.length; j++){
-                if(A[j] >= i && breakStripe){
+                if(numOfStripes > 1000000)
+                    return -1;
+                if(A[j] > i && breakStripe){
+//              if(A[j] >= i && breakStripe){
                     numOfStripes++;
                     breakStripe = false;
-                }else if (A[j] < i){
+                }else if (A[j] <= i){
+//              }else if (A[j] < i){
                     breakStripe = true;
                 }
             }
