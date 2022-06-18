@@ -66,7 +66,8 @@ public class Solution3 {
 
 
 //        return Collections.max(arrayList);
-        Integer finalAns = Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getValue();
+        Integer finalAns = Collections.max(map.entrySet(),
+                Map.Entry.comparingByValue()).getValue();
         System.out.println("the map: "+map);
         System.out.println("the final answer: "+finalAns);
 
